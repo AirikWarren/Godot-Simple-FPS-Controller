@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://player/kinematic_actor.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.60494
+height = 0.8
+
+[node name="Kinematic_actor" type="KinematicBody"]
+script = ExtResource( 1 )
+view_sensitivity = 0.11
+
+[node name="ColShape_body" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.4, 0 )
+shape = SubResource( 1 )
+
+[node name="Spatial_camera_yaw" type="Spatial" parent="."]
+
+[node name="Camera_player" type="Camera" parent="Spatial_camera_yaw"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0 )
+current = true
+fov = 94.0
+near = 0.03
+far = 1778.2
+
+[node name="Label_velocity" type="Label" parent="Spatial_camera_yaw/Camera_player"]
+show_behind_parent = true
+margin_right = 1022.0
+margin_bottom = 74.0
+custom_colors/font_color = Color( 0.815686, 0.117647, 0.117647, 1 )
+text = "\\"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_pitch" type="Label" parent="Spatial_camera_yaw/Camera_player"]
+margin_left = 1.0
+margin_top = 88.8409
+margin_right = 392.0
+margin_bottom = 130.841
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_yaw" type="Label" parent="Spatial_camera_yaw/Camera_player"]
+margin_top = 25.0
+margin_right = 484.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
